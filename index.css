@@ -1,0 +1,17 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+p,
+table {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Menlo", monospace;
+}

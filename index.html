@@ -7,6 +7,60 @@
     <title>The Odin Project | Calculator</title>
   </head>
   <body>
+    <div class="container">
+      <main class="calculator-frame">
+        <section class="display-panel">
+          <div class="history"></div>
+          <div class="result">0</div>
+        </section>
+        <section class="ops-panel">
+          <table class="numbers-buttons">
+            <tr>
+              <td><button id="btn-7" data-value="7">7</button></td>
+              <td><button id="btn-8" data-value="8">8</button></td>
+              <td><button id="btn-9" data-value="9">9</button></td>
+            </tr>
+            <tr>
+              <td><button id="btn-4" data-value="4">4</button></td>
+              <td><button id="btn-5" data-value="5">5</button></td>
+              <td><button id="btn-6" data-value="6">6</button></td>
+            </tr>
+            <tr>
+              <td><button id="btn-1" data-value="1">1</button></td>
+              <td><button id="btn-2" data-value="2">2</button></td>
+              <td><button id="btn-3" data-value="3">3</button></td>
+            </tr>
+            <tr>
+              <td colspan="2"><button id="btn-0" data-value="0">0</button></td>
+              <td><button id="btn-dot" data-value=".">.</button></td>
+            </tr>
+          </table>
+          <table class="ops-buttons">
+            <tr>
+              <td><button id="btn-ac">AC</button></td>
+              <td><button id="btn-del">DEL</button></td>
+            </tr>
+            <tr>
+              <td><button id="btn-add" class="ops-math">+</button></td>
+              <td><button id="btn-subtract" class="ops-math">-</button></td>
+            </tr>
+            <tr>
+              <td><button id="btn-multiply" class="ops-math">x</button></td>
+              <td><button id="btn-divide" class="ops-math">/</button></td>
+            </tr>
+            <tr>
+              <td colspan="2"><button id="btn-equal">=</button></td>
+            </tr>
+          </table>
+        </section>
+      </main>
+      <footer>
+        Challenge by
+        <a href="https://www.theodinproject.com/lessons/foundations-calculator"
+          >The Odin Project</a
+        >, coded by <a href="https://github.com/sydalwedaie">Sayed Ali</a>
+      </footer>
+    </div>
     <script src="/index.js"></script>
   </body>
 </html>
