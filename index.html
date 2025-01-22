@@ -10,8 +10,14 @@
     <div class="container">
       <main class="calculator-frame">
         <section class="display-panel">
-          <div class="history"></div>
           <div class="result">0</div>
+          <table class="memory-buttons">
+            <tr>
+              <td><button class="btn-memory-set">ST</button></td>
+              <td><button class="btn-memory-recal">RL</button></td>
+              <td colspan="3"><div class="solar-panel"></div></td>
+            </tr>
+          </table>
         </section>
         <section class="ops-panel">
           <table class="numbers-buttons">
@@ -38,7 +44,7 @@
           <table class="ops-buttons">
             <tr>
               <td><button id="btn-ac">AC</button></td>
-              <td><button id="btn-del">DEL</button></td>
+              <td><button id="btn-del">DL</button></td>
             </tr>
             <tr>
               <td><button id="btn-add" class="ops-math">+</button></td>
