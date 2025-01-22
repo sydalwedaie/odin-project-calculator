@@ -1,4 +1,5 @@
 const displayPanel = document.querySelector(".display-panel .result");
+
 const numbersBtns = document.querySelector(".numbers-buttons");
 const opsBtns = document.querySelector(".ops-buttons");
 
@@ -8,6 +9,7 @@ const state = {
   operator: null,
   result: 0,
   calculationStage: "first",
+  memory: 0,
 };
 
 function operate(num1, num2, operator) {

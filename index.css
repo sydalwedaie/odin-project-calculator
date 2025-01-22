@@ -27,26 +27,32 @@ table {
 
 body {
   font-family: "Menlo", monospace;
-  background-color: #ececec;
+  background-color: #d7d6d6;
   position: relative;
 }
 
 td {
-  width: 40px;
-  height: 40px;
-  padding: 4px;
+  width: 6.25rem;
+  height: 6.25rem;
+  padding: 0.5rem;
 }
 
 button {
   width: 100%;
   height: 100%;
-  border-radius: 40px;
+  border-radius: 70px;
+  cursor: pointer;
   border: none;
   border-bottom: 1px solid #15153d;
   color: white;
-  background-color: #3d4776;
-  box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.5),
-    0 0 5px 1px rgba(0, 0, 0, 0.5);
+  background-color: #38426c;
+  box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.5);
+  &:active {
+    box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, 0.5);
+  }
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.074);
+  }
 }
 
 .container {
@@ -58,38 +64,56 @@ button {
 }
 
 .calculator-frame {
-  border-radius: 5px;
+  border-radius: 2rem;
   display: inline-block;
   overflow: hidden;
+  position: relative;
+  &::after {
+    content: "";
+    border-radius: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    box-shadow: inset 0 0 2px 1px rgba(188, 188, 189, 0.485);
+  }
 }
 
 .display-panel {
   background-color: #6595c9;
   text-align: right;
-  padding: 20px 15px 5px;
+  padding: 3rem 2rem 1rem;
+  border-bottom: 1px solid #27252c;
 }
 
 .result {
   font-family: "digital-7";
-  font-size: 35px;
+  font-size: 5rem;
   color: #333333;
   background-color: #858b85;
   padding: 0px 5px;
-  border-radius: 5px;
-  line-height: 50px;
-  /* inset box shadow */
+  border-radius: 0.5rem;
+  line-height: 6rem;
   box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.5);
 }
 
 .memory-buttons {
   width: 100%;
-  padding-top: 5px;
+  padding-top: 1rem;
+  button {
+    font-size: 1.2rem;
+    background-color: #5785b6;
+    box-shadow: inset 0 0 2px 0 rgba(5, 34, 61, 0.5);
+    border-bottom: 1px solid #244a74;
+  }
 }
 
 .solar-panel {
   background-color: #3d3737;
   height: 100%;
-  border-radius: 30px;
+  border-radius: 80px;
   box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -97,15 +121,16 @@ button {
   background-color: #30395f;
   display: flex;
   flex-wrap: wrap;
-  padding: 5px 15px 20px;
+  padding: 1rem 2rem 3rem;
+  button {
+    font-size: 2.5rem;
+  }
 }
 
-.numbers-buttons {
-  /* flex-grow: 3; */
-}
-
-.ops-buttons {
-  /* flex-grow: 1; */
+#btn-ac,
+#btn-del {
+  font-size: 1.5rem;
+  background-color: #c58a1c;
 }
 
 footer {
