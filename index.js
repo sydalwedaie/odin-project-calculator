@@ -1,5 +1,5 @@
 const displayPanel = document.querySelector(".display-panel .result");
-
+const memoryBtns = document.querySelector(".memory-buttons");
 const numbersBtns = document.querySelector(".numbers-buttons");
 const opsBtns = document.querySelector(".ops-buttons");
 
@@ -30,6 +30,21 @@ function updateDisplay(number) {
 }
 
 // Event Listeners
+
+memoryBtns.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btn-memory-set")) {
+    state.memory = parseFloat(state.result || state.num2 || state.num1);
+    console.table(state);
+  }
+  if (e.target.classList.contains("btn-memory-recal")) {
+    if (state.calculationStage === "first") {
+      state.num1 = state.memory;
+    } else if (state.calculationStage === "second") {
+      state.num2 = state.memory;
+    }
+    updateDisplay(state.memory);
+  }
+});
 
 numbersBtns.addEventListener("click", (e) => {
   if (!e.target.tagName === "BUTTON") return;
