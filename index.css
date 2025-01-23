@@ -38,6 +38,7 @@ td {
 }
 
 button {
+  vertical-align: baseline;
   width: 100%;
   height: 100%;
   border-radius: 5rem;
@@ -133,6 +134,13 @@ button {
   height: 100%;
   border-radius: 5rem;
   box-shadow: inset 0 0 0.5rem 0.2rem rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  div {
+    border: 1px solid #332e2e;
+  }
 }
 
 .ops-panel {
@@ -155,7 +163,8 @@ button {
 #btn-del {
   font-size: 1.5rem;
   background-color: #c58a1c;
-  border-bottom: 0.2rem solid #332204;
+  border-bottom: 0.2rem solid #2d220a;
+  box-shadow: inset 0 0 0.4rem 0.2rem rgba(64, 59, 46, 0.32);
   &:hover {
     background-color: #d3982a;
   }
