@@ -40,18 +40,16 @@ td {
 button {
   width: 100%;
   height: 100%;
-  border-radius: 70px;
+  border-radius: 5rem;
   cursor: pointer;
   border: none;
-  border-bottom: 1px solid #15153d;
-  color: white;
+  border-bottom: 0.2rem solid #15153d;
+  color: #e4e4e4;
   background-color: #38426c;
-  box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 0.4rem 0 rgba(0, 0, 0, 0.5);
   &:active {
-    box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, 0.5);
-  }
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.074);
+    box-shadow: inset 0 0 0.6rem 0.2rem rgba(0, 0, 0, 0.5);
+    color: #d8d8d8;
   }
 }
 
@@ -77,44 +75,64 @@ button {
     right: 0;
     bottom: 0;
     pointer-events: none;
-    box-shadow: inset 0 0 2px 1px rgba(188, 188, 189, 0.485);
+    box-shadow: inset 0 0 0.4rem 0.2rem rgba(188, 188, 189, 0.485);
   }
 }
 
 .display-panel {
   background-color: #6595c9;
   text-align: right;
-  padding: 3rem 2rem 1rem;
-  border-bottom: 1px solid #27252c;
+  padding: 2rem 2rem 1rem;
+  border-bottom: 0.2rem solid #27252c;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #e4e4e4;
+  padding: 0 0.5rem 0.5rem;
+
+  span:first-child {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
 }
 
 .result {
   font-family: "digital-7";
   font-size: 5rem;
-  color: #333333;
+  color: #3c3c3c;
   background-color: #858b85;
-  padding: 0px 5px;
+  padding: 0 1rem;
   border-radius: 0.5rem;
   line-height: 6rem;
-  box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 0.5rem 0.2rem rgba(0, 0, 0, 0.5);
 }
 
 .memory-buttons {
   width: 100%;
-  padding-top: 1rem;
+  padding-top: 1.5rem;
   button {
     font-size: 1.2rem;
     background-color: #5785b6;
-    box-shadow: inset 0 0 2px 0 rgba(5, 34, 61, 0.5);
-    border-bottom: 1px solid #244a74;
+    box-shadow: inset 0 0 0.4rem 0 rgba(5, 34, 61, 0.5);
+    border-bottom: 0.2rem solid #244a74;
+    &:hover {
+      background-color: #5f90c5;
+    }
+    &:active {
+      font-size: 1.1rem;
+      box-shadow: inset 0 0 0.6rem 0.1rem rgba(0, 0, 0, 0.5);
+    }
   }
 }
 
 .solar-panel {
   background-color: #3d3737;
   height: 100%;
-  border-radius: 80px;
-  box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 5rem;
+  box-shadow: inset 0 0 0.5rem 0.2rem rgba(0, 0, 0, 0.5);
 }
 
 .ops-panel {
@@ -123,7 +141,13 @@ button {
   flex-wrap: wrap;
   padding: 1rem 2rem 3rem;
   button {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.074);
+    }
+    &:active {
+      font-size: 3.3rem;
+    }
   }
 }
 
@@ -131,9 +155,22 @@ button {
 #btn-del {
   font-size: 1.5rem;
   background-color: #c58a1c;
+  border-bottom: 0.2rem solid #332204;
+  &:hover {
+    background-color: #d3982a;
+  }
+  &:active {
+    font-size: 1.4rem;
+  }
 }
 
 footer {
+  padding: 2rem;
   position: absolute;
   bottom: 0;
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #6595c9;
+  }
 }

@@ -26,7 +26,16 @@ function operate(num1, num2, operator) {
 }
 
 function updateDisplay(number) {
-  displayPanel.textContent = parseFloat(number);
+  let numberContent = parseFloat(number);
+  let numberExpo = numberContent.toExponential();
+
+  if (numberContent.toString().length <= 12) {
+    displayPanel.textContent = numberContent;
+  } else if (numberExpo.toString().length <= 12) {
+    displayPanel.textContent = numberExpo;
+  } else {
+    displayPanel.textContent = numberContent.toExponential(6);
+  }
 }
 
 // Event Listeners
@@ -34,13 +43,12 @@ function updateDisplay(number) {
 memoryBtns.addEventListener("click", (e) => {
   if (e.target.classList.contains("btn-memory-set")) {
     state.memory = parseFloat(state.result || state.num2 || state.num1);
-    console.table(state);
   }
   if (e.target.classList.contains("btn-memory-recal")) {
     if (state.calculationStage === "first") {
-      state.num1 = state.memory;
+      state.num1 = state.memory.toString();
     } else if (state.calculationStage === "second") {
-      state.num2 = state.memory;
+      state.num2 = state.memory.toString();
     }
     updateDisplay(state.memory);
   }
@@ -78,10 +86,16 @@ opsBtns.addEventListener("click", (e) => {
 function handleNumberPress(number, state) {
   switch (state.calculationStage) {
     case "first":
+      // if (parseFloat(state.num1).toString().length > 11) {
+      //   return;
+      // }
       state.num1 += number;
       updateDisplay(state.num1);
       break;
     case "second":
+      // if (parseFloat(state.num2).toString().length > 11) {
+      //   return;
+      // }
       state.num2 += number;
       updateDisplay(state.num2);
       break;
