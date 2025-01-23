@@ -55,15 +55,16 @@ memoryBtns.addEventListener("click", (e) => {
 });
 
 numbersBtns.addEventListener("click", (e) => {
-  if (!e.target.tagName === "BUTTON") return;
-  handleNumberPress(e.target.dataset.value, state);
-
-  console.table(state);
+  if (e.target.tagName === "BUTTON") {
+    handleNumberPress(e.target.dataset.value, state);
+    console.table(state);
+  }
 });
 
 opsBtns.addEventListener("click", (e) => {
   if (e.target.classList.contains("ops-math")) {
-    handleOperatorPress(e, state);
+    const operator = e.target.id.split("-")[1];
+    handleOperatorPress(operator, state);
   }
 
   if (e.target.id === "btn-equal" && state.calculationStage === "second") {
@@ -81,21 +82,40 @@ opsBtns.addEventListener("click", (e) => {
   console.table(state);
 });
 
+document.addEventListener("keypress", (e) => {
+  if (parseInt(e.key) >= 0 || parseInt(e.key) <= 9) {
+    handleNumberPress(e.key, state);
+  }
+
+  if (e.key === "Enter") {
+    handleEqualPress(state);
+  }
+
+  switch (e.key) {
+    case "+":
+      handleOperatorPress("add", state);
+      break;
+    case "-":
+      handleOperatorPress("subtract", state);
+      break;
+    case "*":
+      handleOperatorPress("multiply", state);
+      break;
+    case "/":
+      handleOperatorPress("divide", state);
+      break;
+  }
+});
+
 // Event Handlers
 
 function handleNumberPress(number, state) {
   switch (state.calculationStage) {
     case "first":
-      // if (parseFloat(state.num1).toString().length > 11) {
-      //   return;
-      // }
       state.num1 += number;
       updateDisplay(state.num1);
       break;
     case "second":
-      // if (parseFloat(state.num2).toString().length > 11) {
-      //   return;
-      // }
       state.num2 += number;
       updateDisplay(state.num2);
       break;
@@ -107,7 +127,7 @@ function handleNumberPress(number, state) {
   }
 }
 
-function handleOperatorPress(event, state) {
+function handleOperatorPress(operator, state) {
   if (state.calculationStage === "second" && state.num2) {
     state.result = operate(state.num1, state.num2, state.operator);
     state.num1 = state.result;
@@ -115,7 +135,7 @@ function handleOperatorPress(event, state) {
     updateDisplay(state.result);
   }
   state.calculationStage = "second";
-  state.operator = event.target.id.split("-")[1];
+  state.operator = operator;
 }
 
 function handleEqualPress(state) {
