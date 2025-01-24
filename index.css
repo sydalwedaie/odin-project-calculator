@@ -27,8 +27,13 @@ table {
 
 body {
   font-family: "Menlo", monospace;
-  background-color: #d7d6d6;
-  position: relative;
+  background: rgb(220, 222, 158);
+  background: linear-gradient(
+    180deg,
+    rgba(220, 222, 158, 1) 0%,
+    rgba(163, 227, 193, 1) 49%,
+    rgba(169, 222, 232, 1) 100%
+  );
 }
 
 td {
@@ -121,6 +126,20 @@ button {
   border-radius: 0.5rem;
   line-height: 6rem;
   box-shadow: inset 0 0 0.5rem 0.2rem rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.memory-indicator::after {
+  content: "";
+  margin: 0.6rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: #3c3c3c;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
 
 .memory-buttons {
@@ -195,6 +214,6 @@ footer {
   a {
     text-decoration: none;
     font-weight: bold;
-    color: #6595c9;
+    color: #30395f;
   }
 }
