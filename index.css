@@ -72,7 +72,7 @@ button {
 }
 
 .container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -215,5 +215,18 @@ footer {
     text-decoration: none;
     font-weight: bold;
     color: #30395f;
+  }
+}
+
+html {
+  font-size: 6px;
+  @media screen and (min-width: 375px) {
+    font-size: 8px;
+  }
+  @media screen and (min-width: 600px) {
+    font-size: 12px;
+  }
+  @media screen and (min-width: 750px) {
+    font-size: 16px;
   }
 }
