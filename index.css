@@ -220,7 +220,7 @@ footer {
 
 html {
   font-size: 6px;
-  @media screen and (min-width: 375px) {
+  @media screen and (min-width: 380px) {
     font-size: 8px;
   }
   @media screen and (min-width: 600px) {
