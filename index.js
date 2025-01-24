@@ -43,6 +43,7 @@ function updateDisplay(number) {
 memoryBtns.addEventListener("click", (e) => {
   if (e.target.classList.contains("btn-memory-set")) {
     state.memory = parseFloat(state.result || state.num2 || state.num1);
+    displayPanel.classList.add("memory-indicator");
   }
   if (e.target.classList.contains("btn-memory-recal")) {
     if (state.calculationStage === "first") {
@@ -88,6 +89,7 @@ document.addEventListener("keypress", (e) => {
   }
 
   if (e.key === "Enter") {
+    e.preventDefault();
     handleEqualPress(state);
   }
 
