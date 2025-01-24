@@ -21,7 +21,7 @@ This is a solution to the [Calculator project from The Odin Project](https://www
 ## What I Want to Improve
 
 - The state management is a mess! The numbers stored in memory are sometimes in `number` type and other times `string`.
-- I tried to implement a neomorphic design, though the shaows on some of the buttons and the device frame certainly need improvement.
+- I tried to implement a neomorphic design, though the shadows on some of the buttons and the device frame certainly need improvement.
 
 ## Acknowledgement
 
